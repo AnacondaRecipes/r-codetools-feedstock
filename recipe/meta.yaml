@@ -10,8 +10,8 @@ package:
 source:
   fn: codetools_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/codetools_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/codetools/codetools_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/codetools_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/codetools/codetools_{{ version }}.tar.gz
   sha256: 4e0798ed79281a614f8cdd199e25f2c1bd8f35ecec902b03016544bd7795fa40
 
 
