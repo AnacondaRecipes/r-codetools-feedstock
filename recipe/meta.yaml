@@ -1,4 +1,4 @@
-{% set version = '0.2-15' %}
+{% set version = '0.2-16' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,12 +11,13 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/codetools_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/codetools/codetools_{{ version }}.tar.gz
-  sha256: 4e0798ed79281a614f8cdd199e25f2c1bd8f35ecec902b03016544bd7795fa40
+  sha256: f67a66175cb5d8882457d1e9b91ea2f16813d554fa74f80c1fd6e17cf1877501
 
 build:
   merge_build_host: True  # [win]
   # If this is a new build for the same version, increment the build number.
   number: 0
+  noarch: generic
 
   # This is required to make R link correctly on Linux.
   rpaths:
@@ -50,6 +51,7 @@ about:
   license: GPL
   summary: Code analysis tools for R.
   license_family: GPL
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
@@ -60,7 +62,7 @@ extra:
 # The original CRAN metadata for this package was:
 
 # Package: codetools
-# Version: 0.2-15
+# Version: 0.2-16
 # Priority: recommended
 # Author: Luke Tierney <luke-tierney@uiowa.edu>
 # Description: Code analysis tools for R.
@@ -69,9 +71,9 @@ extra:
 # Maintainer: Luke Tierney <luke-tierney@uiowa.edu>
 # License: GPL
 # NeedsCompilation: no
-# Packaged: 2016-10-05 12:32:32 UTC; luke
+# Packaged: 2018-12-22 14:48:17 UTC; luke
 # Repository: CRAN
-# Date/Publication: 2016-10-05 16:36:47
+# Date/Publication: 2018-12-24 12:40:05 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
